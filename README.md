@@ -4,5 +4,3 @@ Navigate throw each page for knowing more about me:
 
 - Front-end developer
 - UI/UX designer
-
-## Expanding the ESLint configuration
