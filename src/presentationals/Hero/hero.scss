@@ -1,0 +1,101 @@
+@use "/src/assets/global";
+.Hero {
+  @include global.paddingInline();
+  @include global.flexbox();
+  @apply flex-col gap-8 h-screen relative py-8 pb-14 overflow-x-hidden;
+  .hero-shape-1 {
+    @apply absolute w-full h-full top-8 -z-10;
+  }
+  .Hero_heading {
+    @apply flex flex-col gap-4;
+    h1 {
+      @apply text-center font-semibold sm:font-normal;
+      color: #303030;
+      font-family: Inter;
+      font-size: 36px;
+      font-style: normal;
+
+      line-height: normal;
+    }
+    h2 {
+      @apply text-center;
+      color: #303030;
+      text-align: center;
+      font-family: Inter;
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .Hero_content {
+    @apply w-full flex flex-row gap-2 items-center justify-between;
+    div {
+      @apply flex-1;
+    }
+
+    .Hero_text {
+      @apply flex flex-col items-start gap-8;
+      h2 {
+        @apply flex flex-col sm:flex-row items-center gap-2 text-center leading-[50px];
+        color: #303030;
+        font-family: Inter;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+      }
+      p {
+        @apply text-justify sm:text-left;
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px; /* 168.75% */
+      }
+
+      .Hero_Cta {
+        @apply w-full sm:w-auto flex flex-col items-center sm:flex-row gap-4;
+        button {
+          @include global.flexbox();
+          @apply justify-center w-full sm:w-auto gap-2 px-4 py-4 sm:py-2 rounded-md;
+          font-family: Inter;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          transition: transform 0.3s ease-in-out;
+          &:nth-child(1) {
+            @apply text-white bg-[#363636];
+          }
+          &:nth-child(2) {
+            @apply text-[#363636] bg-white border-2 border-[#363636];
+          }
+          .icon {
+            transition: transform 0.3s ease-in-out;
+            @apply rotate-0;
+          }
+          &:hover .icon {
+            @apply -rotate-45;
+          }
+        }
+      }
+
+      .Hero_socialIcon {
+        @apply w-full sm:w-auto flex flex-row gap-4 items-center;
+        div {
+          @include global.flexbox();
+          @apply justify-center;
+          @apply w-10 h-10 rounded-full bg-[#D9D9D9];
+          .socialIcon {
+            @apply text-[#363636] text-2xl;
+          }
+        }
+        hr {
+          @apply w-64 h-[1px] bg-[#D9D9D9];
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.App {
+  @apply w-screen overflow-x-hidden cursor-pointer;
+}
+
+.dot {
+  @apply absolute;
+  @apply w-[2px] h-[2px];
+  background-color: rgba(0, 0, 0, 0.5);
+  @apply rounded-full;
+}

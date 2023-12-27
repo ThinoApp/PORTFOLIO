@@ -1,0 +1,31 @@
+@use "/src/assets/global";
+
+.Header {
+  @include global.flexbox();
+  @include global.paddingInline();
+  @apply w-full  flex-col gap-4 sm:flex-row justify-between lg:mt-4;
+  .Header_link {
+    @include global.flexbox();
+    @apply gap-8 flex-wrap justify-center gap-y-4 lg:gap-14 mx-auto;
+    li {
+      @apply duration-100 h-5 cursor-pointer text-[16px] sm:text-[12px] font-[600] sm:font-[400];
+      color: #303030;
+      font-family: Inter;
+      font-style: normal;
+      line-height: normal;
+      &:hover {
+        @apply border-b-2 border-[#303030] border-dotted;
+      }
+    }
+  }
+
+  .Header_socialNetwork {
+    @include global.flexbox();
+    @apply gap-4;
+    li {
+      .icon {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      }
+    }
+  }
+}

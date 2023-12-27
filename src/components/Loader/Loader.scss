@@ -1,0 +1,49 @@
+.Loader {
+  @apply absolute top-0 left-0 bg-white w-screen h-screen flex flex-col items-center justify-center gap-4 lg:gap-12;
+  h1 {
+    @apply text-5xl;
+    @for $i from 1 through 5 {
+      .item-#{$i} {
+        animation-delay: $i * 0.2s;
+      }
+    }
+    span {
+      @apply inline-block;
+      animation: bounce 1s infinite;
+    }
+  }
+
+  .triple-dot {
+    @apply flex items-center gap-4;
+    .dot-item {
+      @apply w-4 h-4 bg-gray-900 rounded-full ease-out;
+      animation: bounce 1s infinite;
+      &:nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.7s;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(30%);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}

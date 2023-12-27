@@ -1,0 +1,7 @@
+@mixin paddingInline {
+  @apply px-8 lg:px-16;
+}
+
+@mixin flexbox {
+  @apply flex items-center;
+}
