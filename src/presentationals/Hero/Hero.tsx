@@ -11,7 +11,6 @@ import * as React from "react";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 const Hero = () => {
-  console.log(`/PORTFOLIO/assets/images/line.svg`);
   return (
     <div className="Hero">
       <img
