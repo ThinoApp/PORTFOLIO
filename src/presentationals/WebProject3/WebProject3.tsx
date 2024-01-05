@@ -20,7 +20,14 @@ const WebProject3 = () => {
         </p>
         <div className="cta-container">
           <button>
-            <span>Live view</span>
+            <span>
+              <a
+                target="_blank"
+                href="https://thinoapp.github.io/WEEKLY_DECEMBER_FRONT_3/"
+              >
+                Live view
+              </a>
+            </span>
             <div>
               <svg
                 stroke="currentColor"

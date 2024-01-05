@@ -1,6 +1,7 @@
 import config from "@/utils/config";
 import "./WebProject.scss";
 import { FiGithub } from "react-icons/fi";
+
 const WebProject = () => {
   return (
     <div className="WebProject">
@@ -17,7 +18,14 @@ const WebProject = () => {
         </p>
         <div className="cta-container">
           <button>
-            <span>Live view</span>
+            <span>
+              <a
+                target="_blank"
+                href="https://thinoapp.github.io/WEEKLY_DECEMBER_FRONT_1/"
+              >
+                Live view
+              </a>
+            </span>
             <div>
               <svg
                 stroke="currentColor"
@@ -40,6 +48,7 @@ const WebProject = () => {
               </svg>
             </div>
           </button>
+
           <button>
             GitHub Link
             <FiGithub className="icon" />
