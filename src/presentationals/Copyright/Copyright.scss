@@ -1,0 +1,8 @@
+@use "/src/assets/global";
+.Copyright {
+  @include global.paddingInline();
+  @apply flex items-center justify-center overflow-hidden;
+  p {
+    @apply text-center text-[14px] font-light;
+  }
+}

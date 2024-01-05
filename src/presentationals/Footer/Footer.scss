@@ -1,0 +1,69 @@
+@use "/src/assets/global";
+
+.Footer {
+  @include global.paddingInline();
+  @apply overflow-hidden relative;
+  .hero-shape-1 {
+    @apply absolute w-full h-full top-8 -z-10 -translate-x-1/4;
+  }
+  .Footer-content {
+    @apply flex flex-col py-12 overflow-hidden gap-8;
+    @apply sm:grid sm:grid-cols-2 sm:grid-rows-2;
+    @apply lg:flex lg:flex-row lg:flex-wrap lg:justify-around;
+    .Footer-main {
+      @apply flex flex-col items-center gap-8;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      h2 {
+        @apply font-semibold text-2xl py-2;
+        background-image: linear-gradient(to bottom, #000, #000);
+        background-size: 50% 2%;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+      }
+      h3 {
+        @apply font-light;
+      }
+      .footer-avatar-container {
+        @apply relative;
+        img {
+          @apply w-44 object-cover;
+          &:nth-of-type(2) {
+            animation-name: toggle;
+            animation-duration: 700ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+          }
+        }
+      }
+      .icon-container {
+        @apply flex items-center justify-center gap-5 w-full text-3xl;
+      }
+    }
+
+    & > ul {
+      @apply flex flex-col gap-4;
+      li {
+        @apply flex items-center gap-4;
+      }
+    }
+    & > ul:nth-last-of-type(1) li:nth-last-of-type(1) {
+      @apply flex-col gap-2 items-start;
+      input {
+        @apply w-full border-2 px-4 py-2 rounded-sm outline-none;
+      }
+      button {
+        @apply px-8 py-2 self-end rounded-sm bg-[#063864] text-white border-none;
+      }
+    }
+  }
+}
+
+@keyframes toggle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

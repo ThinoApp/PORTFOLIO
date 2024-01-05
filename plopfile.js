@@ -28,12 +28,12 @@ export default function (plop) {
     actions: [
       {
         type: "add",
-        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.tsx",
+        path: "src/presentationals/{{pascalCase name}}/{{pascalCase name}}.tsx",
         templateFile: "plop-templates/Component.tsx.hbs",
       },
       {
         type: "add",
-        path: "src/components/{{pascalCase name}}/{{name}}.scss",
+        path: "src/presentationals/{{pascalCase name}}/{{name}}.scss",
         templateFile: "plop-templates/Component.scss.hbs",
       },
     ],

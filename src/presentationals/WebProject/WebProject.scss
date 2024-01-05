@@ -1,0 +1,101 @@
+@use "/src/assets/global";
+
+.WebProject {
+  @include global.paddingInline();
+  @apply w-full flex flex-col sm:flex-row sm:justify-around items-center gap-8 relative overflow-visible;
+  background-image: url("/assets/images/bg_prime.png");
+
+  &::before {
+    content: "";
+    @apply absolute left-0 bottom-0 translate-y-1/3 -translate-x-1/3 -z-10 w-[350px] h-[350px] rounded-full bg-[#97EFF3];
+  }
+  .content-container {
+    @apply flex flex-col w-full sm:w-2/5 items-center sm:items-start gap-4 sm:gap-8;
+    h3 {
+      @apply text-center flex flex-row items-center gap-4;
+      color: #303030;
+      font-family: Inter;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    p {
+      @apply text-justify;
+      color: #000;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px; /* 187.5% */
+    }
+    .cta-container {
+      @apply w-full sm:w-5/6 flex flex-col sm:flex-row gap-4;
+      button {
+        @apply w-full py-4 sm:py-2 flex flex-row gap-8 justify-center items-center rounded-sm;
+        text-align: center;
+        font-family: Inter;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        .icon {
+          @apply text-3xl;
+        }
+        .eyepath {
+          opacity: 0;
+          transition: 0.2s ease-in-out;
+        }
+
+        .eyeclosepath {
+          opacity: 1;
+          transition: 0.2s ease-in-out;
+        }
+        &:hover .eyepath {
+          opacity: 1;
+        }
+        &:hover .eyeclosepath {
+          opacity: 0;
+        }
+        &:nth-child(1) {
+          @apply bg-[#263238];
+          color: #4be3eb;
+        }
+
+        &:nth-child(2) {
+          @apply border-4 sm:border-2 border-[#263238] text-[#263238] font-medium;
+        }
+      }
+    }
+  }
+
+  .content-illustration {
+    @apply relative;
+    img:nth-of-type(1) {
+      @apply relative block;
+      transition: 300ms;
+      &:hover {
+        @apply scale-105;
+        filter: drop-shadow(0px 3px 6px rgba(#4be3eb, 1));
+      }
+    }
+    img:nth-of-type(2) {
+      @apply absolute bottom-0 left-4 w-1/4 h-3/5;
+      transform-origin: bottom left;
+      transition: 300ms;
+      &:hover {
+        @apply -rotate-12;
+        filter: drop-shadow(0px 3px 6px rgba(#4be3eb, 1));
+      }
+    }
+    img:nth-of-type(3) {
+      @apply absolute bottom-0 right-0  w-[50%];
+      transition: 300ms;
+      &:hover {
+        @apply -rotate-12;
+        filter: drop-shadow(0px 3px 6px rgba(#4be3eb, 1));
+      }
+    }
+  }
+}

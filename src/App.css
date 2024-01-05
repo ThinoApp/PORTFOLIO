@@ -1,8 +1,23 @@
 .App {
-  @apply w-screen overflow-x-hidden cursor-pointer;
+  @apply w-screen overflow-x-hidden cursor-pointer flex flex-col gap-8 sm:gap-28;
 }
 
-.dot {
+.dot-first {
+  @apply absolute;
+  @apply w-[4px] h-[4px] -z-10;
+  background-color: rgba(75, 227, 235, 0.5);
+  @apply rounded-full;
+}
+
+.dot-second {
+  @apply absolute;
+  @apply w-[4px] h-[4px];
+  background-color: #9d86df;
+
+  @apply rounded-full;
+}
+
+.dot-third {
   @apply absolute;
   @apply w-[2px] h-[2px];
   background-color: rgba(0, 0, 0, 0.5);

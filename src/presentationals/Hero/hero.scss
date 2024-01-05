@@ -2,20 +2,52 @@
 .Hero {
   @include global.paddingInline();
   @include global.flexbox();
-  @apply flex-col gap-8 h-screen relative py-8 pb-14 overflow-x-hidden;
+  @apply flex-col gap-8 h-fit sm:h-screen relative py-8 pb-14 overflow-hidden;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  // z-index: 10;
+  // /* animation-direction: alternate; */
+  animation-timeline: scroll(root);
   .hero-shape-1 {
     @apply absolute w-full h-full top-8 -z-10;
   }
   .Hero_heading {
     @apply flex flex-col gap-4;
     h1 {
-      @apply text-center font-semibold sm:font-normal;
+      @apply text-center font-semibold sm:font-normal flex flex-row flex-wrap justify-center gap-4;
       color: #303030;
       font-family: Inter;
-      font-size: 36px;
+      font-size: 34px;
       font-style: normal;
-
       line-height: normal;
+      div {
+        @apply relative w-10 h-10 rounded-full scale-100;
+        // background: linear-gradient(to bottom, #063864, #063864);
+        // background-repeat: no-repeat;
+        // background-size: 0 100%;
+        // background-position: center;
+        transition: background-size 300ms, color 300ms;
+
+        p {
+          @apply text-white w-10 h-10 rounded-full absolute text-3xl top-1/2 left-1/2 -translate-y-1/2  -translate-x-1/2 flex justify-center items-center;
+          transition: color 300ms, transform 300ms, opacity 300ms;
+          background: linear-gradient(to bottom, #063864, #063864);
+        }
+
+        span {
+          @apply block opacity-100;
+        }
+        // &:hover {
+        //   @apply scale-100;
+        //   background-size: 100% 100%;
+        //   span {
+        //     @apply duration-500  opacity-0;
+        //   }
+        //   p {
+        //     @apply rounded-full opacity-100;
+        //   }
+        // }
+      }
     }
     h2 {
       @apply text-center;
@@ -33,6 +65,18 @@
     @apply w-full flex flex-row gap-2 items-center justify-between;
     div {
       @apply flex-1;
+    }
+
+    .avatar-container {
+      @apply hidden sm:flex items-center justify-center relative;
+      img:nth-child(2) {
+        @apply duration-1000;
+        clip-path: circle(0%);
+      }
+      &:hover img:nth-child(2) {
+        @apply opacity-100;
+        clip-path: circle(100%);
+      }
     }
 
     .Hero_text {
@@ -65,8 +109,11 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
-          transition: transform 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
           &:nth-child(1) {
+            &:hover {
+              @apply bg-[#7e2539];
+            }
             @apply text-white bg-[#363636];
           }
           &:nth-child(2) {
@@ -76,8 +123,10 @@
             transition: transform 0.3s ease-in-out;
             @apply rotate-0;
           }
-          &:hover .icon {
-            @apply -rotate-45;
+          &:hover {
+            .icon {
+              @apply -rotate-45;
+            }
           }
         }
       }
@@ -97,5 +146,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
