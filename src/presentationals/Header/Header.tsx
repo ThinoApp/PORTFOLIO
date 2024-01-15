@@ -1,5 +1,5 @@
 import "./header.scss";
-import { FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
+import { FiLinkedin, FiGithub, FiMail } from "react-icons/fi";
 
 const Header = () => {
   return (
@@ -20,10 +20,17 @@ const Header = () => {
       </ul>
       <ul className="Header_socialNetwork">
         <li>
-          <FiLinkedin className="icon" />
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/thino-rakotomalala-94540b244/"
+          >
+            <FiLinkedin className="icon" />
+          </a>
         </li>
         <li>
-          <FiTwitter className="icon" />
+          <a target="_blank" href="https://https://github.com/ThinoApp">
+            <FiGithub className="icon" />
+          </a>
         </li>
         <li>
           <FiMail className="icon" />
