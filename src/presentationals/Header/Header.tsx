@@ -28,7 +28,7 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://https://github.com/ThinoApp">
+          <a target="_blank" href="https://github.com/ThinoApp">
             <FiGithub className="icon" />
           </a>
         </li>
