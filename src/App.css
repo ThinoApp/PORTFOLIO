@@ -2,6 +2,15 @@
   @apply w-screen overflow-x-hidden cursor-pointer flex flex-col gap-8 sm:gap-28;
 }
 
+.App h2 {
+  @apply text-center text-[28px] sm:text-[36px] font-semibold sm:font-normal;
+  color: #303030;
+  font-family: Inter;
+  font-style: normal;
+
+  line-height: normal;
+}
+
 .dot-first {
   @apply absolute;
   @apply w-[4px] h-[4px] -z-10;

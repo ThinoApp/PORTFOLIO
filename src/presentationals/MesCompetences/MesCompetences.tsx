@@ -13,8 +13,8 @@ interface MesCompetencesProps {
 
 const MesCompetences = ({ listes }: MesCompetencesProps) => {
   return (
-    <div className="MesCompetences">
-      <h2>Mes compétences</h2>
+    <div className="MesCompetences" id="Skills">
+      <h2>Skills</h2>
       <ul>
         {listes.map((item) => (
           <li key={item.id}>

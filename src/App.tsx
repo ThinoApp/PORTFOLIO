@@ -11,6 +11,8 @@ import Footer from "./presentationals/Footer/Footer";
 function App() {
   let timer: NodeJS.Timeout;
 
+  //Fonction qui permet de créer un tableau entre 2 intervalles de nombre
+
   useEffect(() => {
     let dots: { dot: HTMLDivElement; timer: NodeJS.Timeout }[] = [];
     const mouseMoveHandler = function (e: MouseEvent) {
@@ -35,6 +37,8 @@ function App() {
       <AnimatedCursor color="0,0,0" />
       <HeroContainer />
       <MesCompetencesContainer />
+      <h2>Projects</h2>
+
       <WebProject />
       <WebProject2 />
       <WebProject3 />

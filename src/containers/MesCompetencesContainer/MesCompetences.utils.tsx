@@ -3,7 +3,7 @@ import { FiPenTool, FiSmartphone } from "react-icons/fi";
 export const mesCompetences = [
   {
     id: 1,
-    title: "Développement web",
+    title: "Web development",
     description: `
     Web developer specialized in front-end and back-end. Varied experience in HTML, CSS, JavaScript, React, Typescript. I am always ready to take on new challenges and explore new opportunities in the field of web development`,
 
@@ -22,7 +22,7 @@ export const mesCompetences = [
 
   {
     id: 3,
-    title: "Développement mobile",
+    title: "Mobile development ",
     description: `
    
 Specialist in mobile development, I create efficient and user-friendly mobile applications. I'm experienced in developing for iOS and Android platforms, using technologies like Kotlin, React Native and Flutter.

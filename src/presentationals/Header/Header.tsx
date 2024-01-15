@@ -5,10 +5,18 @@ const Header = () => {
   return (
     <div className="Header">
       <ul className="Header_link">
-        <li>Home</li>
-        <li>About Me</li>
-        <li>Projects</li>
-        <li>Contact</li>
+        <li>
+          <a href="#Home">Home</a>
+        </li>
+        <li>
+          <a href="#Skills">Skills</a>
+        </li>
+        <li>
+          <a href="#Projects">Projects</a>
+        </li>
+        <li>
+          <a href="#Footer">Contact</a>
+        </li>
       </ul>
       <ul className="Header_socialNetwork">
         <li>

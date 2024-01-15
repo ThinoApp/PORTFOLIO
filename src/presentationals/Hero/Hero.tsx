@@ -20,7 +20,7 @@ const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 const Hero = () => {
   return (
-    <div className="Hero">
+    <div className="Hero" id="Hero">
       <img
         src={`${config.image_base}/assets/images/line.svg`}
         alt="line"
@@ -91,6 +91,11 @@ const Hero = () => {
           <img
             src={`${config.image_base}/assets/images/Thino.png`}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20vw] object-cover"
+          />
+          <img
+            src={`${config.image_base}/assets/images/design.png`}
+            alt="shape rect"
+            className="hero-shape-0"
           />
         </div>
         <div className="Hero_text">

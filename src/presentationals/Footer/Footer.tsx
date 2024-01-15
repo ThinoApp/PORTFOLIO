@@ -11,7 +11,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Copyright from "../Copyright/Copyright";
 const Footer = () => {
   return (
-    <div className="Footer">
+    <div className="Footer" id="Footer">
       <img
         src={`${config.image_base}/assets/images/line.svg`}
         alt="line"
@@ -43,13 +43,13 @@ const Footer = () => {
           <li>
             <strong>Link</strong>
           </li>
-          <li>Mes projets web</li>
-          <li>Mes projets mobile</li>
-          <li>Mes projets ui/ux design</li>
+          <li>Web projects</li>
+          <li>Mobile projects</li>
+          <li>ui/ux design projects</li>
         </ul>
         <ul>
           <li>
-            <strong>Position</strong>
+            <strong>Location</strong>
           </li>
           <li>
             <FiMapPin />

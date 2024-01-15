@@ -4,7 +4,7 @@ import { FiGithub } from "react-icons/fi";
 
 const WebProject = () => {
   return (
-    <div className="WebProject">
+    <div className="WebProject" id="Projects">
       <div className="content-container">
         <h3>
           <img src={`${config.image_base}/assets/images/primeCRM/Logo.png`} />
