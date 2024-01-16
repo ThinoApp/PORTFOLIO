@@ -140,7 +140,7 @@
       }
 
       .Hero_socialIcon {
-        @apply w-full sm:w-auto flex flex-row gap-4 items-center;
+        @apply w-full sm:w-auto flex flex-row gap-4 items-center mb-4;
         div {
           @include global.flexbox();
           @apply justify-center;

@@ -20,7 +20,7 @@
     }
   }
   ul {
-    @apply flex flex-col sm:flex-row gap-24 sm:gap-0 justify-between items-center;
+    @apply flex flex-col sm:flex-row gap-24 sm:gap-0 justify-between items-stretch;
 
     li {
       @apply bg-white relative w-full sm:w-[27%]  p-4  flex flex-col items-start gap-6;
@@ -57,6 +57,7 @@
         line-height: 28px; /* 150% */
       }
       a {
+        @apply mt-auto;
         color: #000;
         font-family: Inter;
         font-size: 14px;
