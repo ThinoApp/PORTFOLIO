@@ -4,10 +4,10 @@ import config from "@/utils/config";
 // import Spline from "@splinetool/react-spline";
 import { MdWavingHand } from "react-icons/md";
 import { IoCodeDownloadSharp } from "react-icons/io5";
-import { FaGithub, FaLinkedin, FaUserCircle } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsappSquare } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-import * as React from "react";
+// import * as React from "react";
 import { titles } from "@/containers/HeroContainer/Hero.utils";
 import {
   fadeIn,
@@ -16,9 +16,18 @@ import {
   textContainer,
 } from "./Hero.motion";
 
-const Spline = React.lazy(() => import("@splinetool/react-spline"));
+// const Spline = React.lazy(() => import("@splinetool/react-spline"));
+interface Props {
+  handleDownloadCV: () => void;
+  handleHireMeClick: () => void;
+  contactMeFromWhatsapp: () => void;
+}
 
-const Hero = () => {
+const Hero = ({
+  handleDownloadCV,
+  handleHireMeClick,
+  contactMeFromWhatsapp,
+}: Props) => {
   return (
     <div className="Hero" id="Hero">
       <img
@@ -27,12 +36,12 @@ const Hero = () => {
         className="hero-shape-1"
       />
       <HeaderContainer />
-
+      {/* 
       <Spline
         className="sm:hidden"
         scene="https://prod.spline.design/g3SdymjwkvqytP8w/scene.splinecode"
         style={{ width: "100vw" }}
-      />
+      /> */}
 
       <motion.div
         variants={staggerContainer(0.5, 0.2)}
@@ -119,24 +128,35 @@ const Hero = () => {
             users' complexities.
           </p>
           <div className="Hero_Cta">
-            <button>
+            <button onClick={handleHireMeClick}>
               Hire Me
               <MdWavingHand className="icon" />
             </button>
-            <button>
+
+            <button onClick={handleDownloadCV}>
               Download CV
               <IoCodeDownloadSharp className="icon" />
             </button>
           </div>
           <div className="Hero_socialIcon">
             <div>
-              <FaUserCircle className="socialIcon" />
+              <FaWhatsappSquare
+                onClick={contactMeFromWhatsapp}
+                className="socialIcon"
+              />
             </div>
             <div>
-              <FaLinkedin className="socialIcon" />
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/thino-rakotomalala-94540b244/"
+              >
+                <FaLinkedin className="socialIcon" />
+              </a>
             </div>
             <div>
-              <FaGithub className="socialIcon" />
+              <a target="_blank" href="https://github.com/ThinoApp">
+                <FaGithub className="socialIcon" />
+              </a>
             </div>
             <hr className="hidden sm:block" />
           </div>

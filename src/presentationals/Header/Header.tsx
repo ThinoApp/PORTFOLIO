@@ -1,7 +1,10 @@
 import "./header.scss";
 import { FiLinkedin, FiGithub, FiMail } from "react-icons/fi";
 
-const Header = () => {
+interface HeaderProps {
+  handleSendMail: () => void;
+}
+const Header = ({ handleSendMail }: HeaderProps) => {
   return (
     <div className="Header">
       <ul className="Header_link">
@@ -32,7 +35,7 @@ const Header = () => {
             <FiGithub className="icon" />
           </a>
         </li>
-        <li>
+        <li onClick={handleSendMail}>
           <FiMail className="icon" />
         </li>
       </ul>

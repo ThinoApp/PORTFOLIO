@@ -1,15 +1,21 @@
 import config from "@/utils/config";
 import "./Footer.scss";
-import {
-  FiFacebook,
-  FiLinkedin,
-  FiMail,
-  FiMapPin,
-  FiTwitter,
-} from "react-icons/fi";
+import { FiFacebook, FiLinkedin, FiMail, FiMapPin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import Copyright from "../Copyright/Copyright";
-const Footer = () => {
+import { Link } from "react-router-dom";
+
+interface FooterProps {
+  handleEmailBodyChange: (value: string) => void;
+  handleSendMail: () => void;
+  contactMeFromWhatsapp: () => void;
+}
+
+const Footer = ({
+  handleEmailBodyChange,
+  handleSendMail,
+  contactMeFromWhatsapp,
+}: FooterProps) => {
   return (
     <div className="Footer" id="Footer">
       <img
@@ -32,20 +38,36 @@ const Footer = () => {
             />
           </div>
           <div className="icon-container">
-            <FiLinkedin />
-            <FiMail />
-            <FiFacebook />
-            <FiTwitter />
-            <FaWhatsapp />
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/thino-rakotomalala-94540b244/"
+            >
+              <FiLinkedin />
+            </a>
+            <a href="mailto:rakotomalalathino@gmail.com?subject=Need your service">
+              <FiMail />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100008259434338">
+              <FiFacebook />
+            </a>
+            <a href="" onClick={(e) => e.preventDefault()}>
+              <FaWhatsapp onClick={contactMeFromWhatsapp} />
+            </a>
           </div>
         </div>
         <ul>
           <li>
             <strong>Link</strong>
           </li>
-          <li>Web projects</li>
-          <li>Mobile projects</li>
-          <li>ui/ux design projects</li>
+          <li>
+            <a href="#Skills">Web projects</a>
+          </li>
+          <li>
+            <Link to="/mobile">Mobile projects</Link>
+          </li>
+          <li>
+            <Link to="/ux">ui/ux design projects</Link>
+          </li>
         </ul>
         <ul>
           <li>
@@ -60,9 +82,16 @@ const Footer = () => {
             rakotomalalathino@gmail.com
           </li>
           <li>
-            <label htmlFor="">Inbox me</label>
-            <input type="text" placeholder="Write Message" name="" id="" />
-            <button>Send</button>
+            <label htmlFor="">
+              <strong>Inbox me</strong>
+            </label>
+            <textarea
+              onChange={(e) => handleEmailBodyChange(e.target.value)}
+              placeholder="Write Message"
+              name=""
+              id=""
+            />
+            <button onClick={handleSendMail}>Send</button>
           </li>
         </ul>
       </div>

@@ -1,16 +1,17 @@
-import Hero from "@/presentationals/Hero/Hero";
-import { saveAs } from "file-saver";
+import Footer from "@/presentationals/Footer/Footer";
+import { useState } from "react";
 
-const HeroContainer = () => {
-  const handleDownloadCV = () => {
-    saveAs(
-      "http://localhost:5173/PORTFOLIO/assets/pdf/CV.pdf",
-      "RAKOTOMALALA_THINO.pdf"
-    );
+const FooterContainer = () => {
+  const [emailBody, setEmailBody] = useState("");
+
+  const handleEmailBodyChange = (value: string) => {
+    setEmailBody(value);
   };
 
-  const handleHireMeClick = () => {
-    window.location.href = "mailto:rakotomalalathino@gmail.com";
+  const handleSendMail = () => {
+    window.location.href = `mailto:rakotomalalathino@gmail.com?subject=Need you&body=${encodeURIComponent(
+      emailBody
+    )}`;
   };
 
   const contactMeFromWhatsapp = () => {
@@ -25,15 +26,16 @@ const HeroContainer = () => {
     // Ouvre WhatsApp dans une nouvelle fenêtre/onglet ou dans l'app pour les appareils mobiles
     window.open(whatsappUrl, "_blank");
   };
+
   return (
     <>
-      <Hero
-        handleDownloadCV={handleDownloadCV}
-        handleHireMeClick={handleHireMeClick}
+      <Footer
+        handleEmailBodyChange={handleEmailBodyChange}
+        handleSendMail={handleSendMail}
         contactMeFromWhatsapp={contactMeFromWhatsapp}
       />
     </>
   );
 };
 
-export default HeroContainer;
+export default FooterContainer;

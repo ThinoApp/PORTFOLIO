@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import "./MesCompetences.scss";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 interface MesCompetencesProps {
   listes: {
     id: number;
@@ -20,19 +21,7 @@ const MesCompetences = ({ listes }: MesCompetencesProps) => {
           <li key={item.id}>
             <motion.div
               initial={{ backgroundColor: "rgb(0,0,0, 0.2)" }}
-              whileInView={{ backgroundColor: item.color }}
-              transition={{ delay: 0.5 * item.id }}
-              className="bg-top"
-            ></motion.div>
-            <motion.div
-              initial={{ backgroundColor: "rgb(0,0,0, 0.2)" }}
-              whileInView={{ backgroundColor: item.color }}
-              transition={{ delay: 0.5 * item.id }}
-              className="bg-bottom"
-            ></motion.div>
-            <motion.div
-              initial={{ backgroundColor: "rgb(0,0,0, 0.2)" }}
-              whileInView={{ backgroundColor: item.color }}
+              whileInView={{ backgroundColor: "#000", color: item.color }}
               transition={{ delay: 0.5 * item.id }}
               className={`icon-container`}
               // style={{ backgroundColor: item.color }}
@@ -41,7 +30,7 @@ const MesCompetences = ({ listes }: MesCompetencesProps) => {
             </motion.div>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-            <a href="">Read More</a>
+            <Link to={`/${item.id}`}>Read More</Link>
           </li>
         ))}
       </ul>

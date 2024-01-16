@@ -2,13 +2,20 @@
   @apply w-screen overflow-x-hidden cursor-pointer flex flex-col gap-8 sm:gap-28;
 }
 
-.App h2 {
-  @apply text-center text-[28px] sm:text-[36px] font-semibold sm:font-normal;
-  color: #303030;
+.App h2.projects-title {
+  @apply text-center pb-2 self-center duration-300 text-[28px] sm:text-[36px] font-extrabold uppercase;
+  color: #000;
   font-family: Inter;
   font-style: normal;
-
   line-height: normal;
+  background: linear-gradient(black, black);
+  background-repeat: no-repeat;
+  background-size: 0% 5px;
+  background-position: bottom left;
+}
+
+.App h2.projects-title:hover {
+  background-size: 100% 5px;
 }
 
 .dot-first {

@@ -51,7 +51,12 @@ const WebProject3 = () => {
             </div>
           </button>
           <button>
-            GitHub Link
+            <a
+              target="_blank"
+              href="https://github.com/ThinoApp/WEEKLY_DECEMBER_FRONT_3.git"
+            >
+              GitHub Link
+            </a>
             <FiGithub className="icon" />
           </button>
         </div>

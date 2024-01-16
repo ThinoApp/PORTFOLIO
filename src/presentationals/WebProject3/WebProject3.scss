@@ -2,7 +2,7 @@
 
 .WebProject3 {
   @include global.paddingInline();
-  @apply w-full flex flex-col sm:flex-row sm:justify-around items-center gap-8 relative overflow-hidden;
+  @apply w-full flex flex-col sm:flex-row sm:justify-around items-center gap-8 relative overflow-visible;
   background-image: url("/assets/images/bg_prime.png");
 
   &::before {
@@ -11,7 +11,9 @@
   }
 
   .content-container {
-    @apply flex flex-col w-full sm:w-2/5 items-center sm:items-start gap-4 sm:gap-8;
+    @apply flex flex-col  p-4 w-full sm:w-[45%] items-center sm:items-start gap-4 sm:gap-8;
+    border: 2px solid black;
+    box-shadow: 10px 10px 0px 0px #000000;
     h3 {
       @apply text-center flex flex-col sm:flex-row items-center gap-4;
       color: #000;

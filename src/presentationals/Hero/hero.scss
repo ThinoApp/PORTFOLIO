@@ -63,13 +63,17 @@
   }
 
   .Hero_content {
-    @apply w-full flex flex-row gap-2 items-center justify-between;
+    @apply w-full flex flex-col  sm:flex-row gap-2 items-center justify-between;
     div {
       @apply flex-1;
     }
 
     .avatar-container {
-      @apply hidden sm:flex overflow-hidden items-center justify-center relative;
+      @apply w-full sm:w-fit flex overflow-hidden items-center justify-center relative;
+      img {
+        @apply w-1/2;
+        filter: drop-shadow(3px 6px 12px rgba($color: #fff, $alpha: 0.3));
+      }
       img:nth-child(2) {
         @apply duration-1000;
         clip-path: circle(0%);
