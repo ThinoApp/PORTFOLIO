@@ -4,7 +4,7 @@ import { saveAs } from "file-saver";
 const HeroContainer = () => {
   const handleDownloadCV = () => {
     saveAs(
-      "http://localhost:5173/PORTFOLIO/assets/pdf/CV.pdf",
+      "https://thinoapp.github.io/PORTFOLIO/assets/pdf/CV.pdf",
       "RAKOTOMALALA_THINO.pdf"
     );
   };
