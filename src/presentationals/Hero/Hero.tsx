@@ -84,7 +84,7 @@ const Hero = ({
             </div>
           ))}
         </motion.h1>
-        <h2>DEVELOPPER FRONT-END</h2>
+        <h2>FRONT-END DEVELOPER</h2>
       </motion.div>
       <div className="Hero_content">
         {/* <Spline
