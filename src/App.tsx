@@ -7,6 +7,7 @@ import WebProject from "./presentationals/WebProject/WebProject";
 import WebProject2 from "./presentationals/WebProject2/WebProject2";
 import WebProject3 from "./presentationals/WebProject3/WebProject3";
 import FooterContainer from "./containers/FooterContainer/FooterContainer";
+import GithubClone from "./presentationals/GithubClone/GithubClone";
 
 function App() {
   // let timer: NodeJS.Timeout;
@@ -42,6 +43,7 @@ function App() {
       <WebProject />
       <WebProject2 />
       <WebProject3 />
+      <GithubClone />
       <FooterContainer />
     </div>
   );

@@ -83,7 +83,7 @@
         clip-path: circle(100%);
       }
       .hero-shape-0 {
-        @apply absolute w-[90%] h-full -z-10 bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 object-contain;
+        @apply absolute w-[90%] h-full -z-10 bottom-1/2 left-1/2 object-contain;
       }
     }
 

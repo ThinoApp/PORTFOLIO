@@ -1,10 +1,17 @@
 import config from "@/utils/config";
 import "./WebProject2.scss";
 import { FiGithub } from "react-icons/fi";
+import { motion } from "framer-motion";
+
 const WebProject2 = () => {
   return (
     <div className="WebProject2">
-      <div className="content-container">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ amount: 0.5, once: false }}
+        className="content-container"
+      >
         <h3>
           <img src={`${config.image_base}/assets/images/pages/Logo.svg`} />
           Pages
@@ -59,17 +66,25 @@ const WebProject2 = () => {
             <FiGithub className="icon" />
           </button>
         </div>
-      </div>
+      </motion.div>
       <div className="content-illustration">
-        <img
+        <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           src={`${config.image_base}/assets/images/pages/pages_desktop.png`}
           alt="pages desktop"
         />
-        <img
+        <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
           src={`${config.image_base}/assets/images/pages/pages_mobile.png`}
           alt="pages mobile"
         />
-        <img
+        <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
           src={`${config.image_base}/assets/images/pages/pages_tablet.png`}
           alt="pages tablet"
         />

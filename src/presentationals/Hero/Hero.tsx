@@ -93,7 +93,10 @@ const Hero = ({
           style={{ width: "50vw", height: "70vh" }}
         /> */}
         <div className="avatar-container">
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
             src={`${config.image_base}/assets/images/portfolio.svg`}
             className="w-[20vw] object-cover"
           />
@@ -101,7 +104,10 @@ const Hero = ({
             src={`${config.image_base}/assets/images/Thino.png`}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20vw] object-cover"
           />
-          <img
+          <motion.img
+            initial={{ x: "-50%", y: "50%", scale: 0, opacity: 0 }}
+            whileInView={{ x: "-50%", y: "50%", scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
             src={`${config.image_base}/assets/images/design.png`}
             alt="shape rect"
             className="hero-shape-0"
@@ -120,13 +126,17 @@ const Hero = ({
               />
             </span>
           </h2>
-          <p>
+          <motion.p
+            initial={{ x: 100, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "anticipate" }}
+          >
             Creator of complete digital solutions, I am a Full Stack Developer
             Passionate about turning ideas into functional applications. My
             mastery of front-end and back-end technologies allows me to build
             Robust and intuitive web platforms that can meet the needs of the
             users' complexities.
-          </p>
+          </motion.p>
           <div className="Hero_Cta">
             <button onClick={handleHireMeClick}>
               Hire Me

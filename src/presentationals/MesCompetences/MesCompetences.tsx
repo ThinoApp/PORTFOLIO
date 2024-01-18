@@ -17,12 +17,17 @@ const MesCompetences = ({ listes }: MesCompetencesProps) => {
     <div className="MesCompetences" id="Skills">
       <h2>Skills</h2>
       <ul>
-        {listes.map((item) => (
-          <li key={item.id}>
+        {listes.map((item, index) => (
+          <motion.li
+            animate={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: index * 0.1, duration: 0.3 }}
+            key={item.id}
+          >
             <motion.div
               initial={{ backgroundColor: "rgb(0,0,0, 0.2)" }}
               whileInView={{ backgroundColor: "#000", color: item.color }}
-              transition={{ delay: 0.5 * item.id }}
+              transition={{ delay: 0.3 * item.id }}
               className={`icon-container`}
               // style={{ backgroundColor: item.color }}
             >
@@ -31,7 +36,7 @@ const MesCompetences = ({ listes }: MesCompetencesProps) => {
             <h3>{item.title}</h3>
             <p>{item.description}</p>
             <Link to={`/${item.id}`}>Read More</Link>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>

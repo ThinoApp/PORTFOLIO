@@ -1,0 +1,100 @@
+.GithubClone {
+  @apply bg-githubMobile sm:bg-githubDesktop bg-no-repeat bg-cover relative;
+  @apply flex flex-col gap-8 justify-center items-center;
+  clip-path: circle(10% at center);
+
+  transition: clip-path 0.4s ease-in;
+
+  //   filter: drop-shadow(10px 0px 0px black);
+  transform: scale(1);
+
+  &::before {
+    content: "";
+    @apply w-full h-full absolute top-0 left-0;
+    background: rgba(0, 0, 0, 0.83);
+    background: linear-gradient(to right, #000, rgba(0, 0, 0, 0.83));
+  }
+  &.hide {
+    @apply w-[500px] h-[500px];
+    animation: pulse 1s ease-in infinite alternate-reverse;
+  }
+  &.show {
+    @apply w-screen h-screen sm:flex-row justify-center lg:justify-start lg:pl-24;
+    clip-path: circle(100%);
+    img {
+      @apply hidden sm:block z-10;
+      filter: drop-shadow(-20px 20px 0px white);
+    }
+
+    .content-container {
+      @apply z-10 flex flex-col items-center justify-center sm:items-start relative gap-8;
+      h2 {
+        @apply z-10 flex flex-col gap-2 items-center sm:items-start mx-4 sm:mx-0;
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 43px;
+        text-align: center;
+        color: #fff;
+        span {
+          @apply bg-white text-black font-extrabold px-2;
+        }
+      }
+
+      button {
+        @apply z-10 flex items-center gap-4;
+        @apply font-extrabold;
+        font-family: Inter;
+        font-size: 25px;
+        line-height: 43px;
+        text-align: left;
+        &:nth-of-type(1) {
+          text-shadow: 5px 5px 0px #000;
+          transition: background-size 0.4s;
+          background: linear-gradient(white, white);
+          background-repeat: no-repeat;
+          background-size: 0 4px;
+          background-position: bottom left;
+          color: #fff;
+          &:hover {
+            background-size: 100% 4px;
+          }
+        }
+        &:nth-of-type(2) {
+          @apply duration-300 bg-white text-black px-4 tracking-widest;
+          @apply font-extrabold;
+          &:hover {
+            @apply text-white;
+            -webkit-text-stroke: 1px #000;
+            text-shadow: 5px 5px 0px #000;
+          }
+
+          //   text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+          //     1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+        }
+      }
+    }
+  }
+
+  .github-icon {
+    @apply text-white z-10 text-7xl;
+    filter: drop-shadow(10px 10px 0px black);
+  }
+}
+
+.whatIsThis {
+  @apply w-[60%] uppercase text-center text-black px-4 py-2 font-extrabold border-2 border-black;
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[200%];
+  box-shadow: 10px 10px 0px 0px black;
+}
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}

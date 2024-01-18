@@ -1,11 +1,17 @@
 import config from "@/utils/config";
 import "./WebProject.scss";
 import { FiGithub } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const WebProject = () => {
   return (
     <div className="WebProject" id="Projects">
-      <div className="content-container">
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ amount: 0.25, once: false }}
+        className="content-container"
+      >
         <h3>
           <img src={`${config.image_base}/assets/images/primeCRM/Logo.png`} />
           PrimeCRM
@@ -59,8 +65,12 @@ const WebProject = () => {
             <FiGithub className="icon" />
           </button>
         </div>
-      </div>
-      <div className="content-illustration">
+      </motion.div>
+      <motion.div
+        initial={{ x: 100, y: 10 }}
+        whileInView={{ x: 0, y: 0 }}
+        className="content-illustration"
+      >
         <img
           src={`${config.image_base}/assets/images/primeCRM/PrimeCRM_desktop.png`}
           alt="primeCRM desktop"
@@ -73,7 +83,7 @@ const WebProject = () => {
           src={`${config.image_base}/assets/images/primeCRM/PrimeCRM_tablet.png`}
           alt="primeCRM tablet"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
